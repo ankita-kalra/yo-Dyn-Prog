@@ -15,13 +15,13 @@ int longCommnSeq(int a[],int b[],int m,int n)
 
     for(int i=0;i<=m;i++)
       for(int j=0;j<=n;j++)
-      {
+      { //initialization
         if(i==0||j==0)
             l[i][j]=0;
         else if(a[i-1]==b[j-1])
-            l[i][j]=max(max(l[i-1][j-1],l[i-1][j]),l[i][j-1])+1;
+            l[i][j]=max(max(l[i-1][j-1],l[i-1][j]),l[i][j-1])+1; //calculation
         else
-            l[i][j]=max(max(l[i-1][j-1],l[i-1][j]),l[i][j-1]);
+            l[i][j]=max(max(l[i-1][j-1],l[i-1][j]),l[i][j-1]);  //calculation
       }
     return l[m][n];
 }
