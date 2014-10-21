@@ -11,18 +11,19 @@ int longIncSeq(int arr[],int n)
 {
     int *l,m=1;
     l=(int *)malloc(n*sizeof(int));
-
+     //initialization
     for(int i=0;i<n;i++)
        {
         l[i]=1;
         cout << l[i] << " ";
        }
     cout << endl;
+    //filling
     for(int i=1;i<n;i++)
         for(int j=0;j<i;j++)
           if((arr[i]>arr[j]) && (l[i]<l[j]+1))
               l[i]+=1;
-
+    //finding min. of all
     for(int i=0;i<n;i++)
      {  cout << l[i] << " ";
         if(m<l[i])
